@@ -9,9 +9,9 @@ Important data structures include :
 
 		MainCar
 
-		The player’s car. It has properties like state, position and body. State is of type CarState which can be dead or alive. The game goes on until the state of the main car is Alive. Position is of type CarPosit which can be MThis game is achieved through the continuous calling of three important functions
+			The player’s car. It has properties like state, position and body. State is of type CarState which can be dead or alive. The game goes on until the state of the main car is Alive. Position is of type CarPosit which can be MThis game is achieved through the continuous calling of three important functions
 
-            mainControl  :: DeviceContext -> Game -> IO a
+            mainControl  	 :: DeviceContext -> Game -> IO a
             loop 		 :: DeviceContext -> Int -> Game -> IO a
             draw 		 :: Int -> Game -> Canvas ()
             
@@ -30,11 +30,15 @@ What the important functions do...
 			Builds a list of EnemyCar objects with random positions
 			Builds the MainCar
 			Sets up the initial game state with the aforementioned and calls loop
+			
 		loop
+		
 			Clears the canvas
 			Uses the game state from the argument and calls draw
 			Calls mainControl to analyze the game state
+			
 		mainControl
+		
 			Listens to the player’s “keydown” events (for switching lanes)
 			Advances the coordinates of the other cars along the lane
 			Checks whether the user has collided with another car
